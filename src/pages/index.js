@@ -7,21 +7,21 @@ import clientPromise from '@lib/db';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export async function getServerSideProps(context) {
-  try {
-    await clientPromise;
+// export async function getServerSideProps(context) {
+//   try {
+//     await clientPromise;
 
-    console.log('connected to mongodb');
-    return {
-      props: { isConnected: true },
-    };
-  } catch (e) {
-    console.error(e);
-    return {
-      props: { isConnected: false },
-    };
-  }
-}
+//     console.log('connected to mongodb');
+//     return {
+//       props: { isConnected: true },
+//     };
+//   } catch (e) {
+//     console.error(e);
+//     return {
+//       props: { isConnected: false },
+//     };
+//   }
+// }
 
 const Home = () => {
   return (
