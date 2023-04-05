@@ -14,17 +14,38 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Copyright from '@components/Copyright';
 
+import { useRouter } from 'next/router';
+
 const theme = createTheme();
 
 export default function SignInSide() {
-  const handleSubmit = (event) => {
+  const router = useRouter();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-    Link;
+
+    try {
+      const response = await fetch('../api/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: data.get('email'),
+          password: data.get('password'),
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      console.log('User successfully signed in');
+      router.push('/');
+    } catch (err) {
+      console.log({ error: err });
+    }
   };
 
   return (

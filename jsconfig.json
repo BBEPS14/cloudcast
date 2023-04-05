@@ -3,7 +3,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
-      "@pages/*": ["./src/pages/*"]
+      "@pages/*": ["./src/pages/*"],
+      "@lib/*": ["./lib/*"],
+      "@model/*": ["./model/*"]
     }
   }
 }

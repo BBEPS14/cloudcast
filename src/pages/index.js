@@ -1,9 +1,27 @@
 import Head from 'next/head';
 import * as React from 'react';
 import { Inter } from 'next/font/google';
-import Album from '@/components/Album';
+import Album from '@components/Album';
+import Upload from '@components/Upload';
+import clientPromise from '@lib/db';
 
 const inter = Inter({ subsets: ['latin'] });
+
+// export async function getServerSideProps(context) {
+//   try {
+//     await clientPromise;
+
+//     console.log('connected to mongodb');
+//     return {
+//       props: { isConnected: true },
+//     };
+//   } catch (e) {
+//     console.error(e);
+//     return {
+//       props: { isConnected: false },
+//     };
+//   }
+// }
 
 const Home = () => {
   return (
@@ -15,6 +33,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Upload />
         <Album />
       </main>
     </>
