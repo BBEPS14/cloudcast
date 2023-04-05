@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
-import AudioFileIcon from '@mui/icons-material/AudioFile';
+import PodcastsIcon from '@mui/icons-material/Podcasts';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -28,7 +28,7 @@ export default function Album() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          <AudioFileIcon sx={{ mr: 2 }} />
+          <PodcastsIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
             CloudCast
           </Typography>
@@ -51,7 +51,7 @@ export default function Album() {
               color="text.primary"
               gutterBottom
             >
-              Start podcasting now
+              Your one-stop shop for podcasting
             </Typography>
             <Typography
               variant="h5"
@@ -59,7 +59,7 @@ export default function Album() {
               color="text.secondary"
               paragraph
             >
-              Upload an audio file.
+              Upload your podcast below!
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -109,17 +109,6 @@ export default function Album() {
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
         <Copyright />
       </Box>
       {/* End footer */}
