@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
+import AudioFileIcon from '@mui/icons-material/AudioFile';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -16,6 +16,7 @@ import Container from '@mui/material/Container';
 // import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Copyright from '@/components/Copyright';
+import Upload from '@components/Upload';
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -27,9 +28,9 @@ export default function Album() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
+          <AudioFileIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            CloudCast
           </Typography>
         </Toolbar>
       </AppBar>
@@ -42,7 +43,7 @@ export default function Album() {
             pb: 6,
           }}
         >
-          <Container maxWidth="sm">
+          <Container maxWidth="md">
             <Typography
               component="h1"
               variant="h2"
@@ -50,7 +51,7 @@ export default function Album() {
               color="text.primary"
               gutterBottom
             >
-              Album layout
+              Start podcasting now
             </Typography>
             <Typography
               variant="h5"
@@ -58,9 +59,7 @@ export default function Album() {
               color="text.secondary"
               paragraph
             >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
+              Upload an audio file.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -68,8 +67,7 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <Upload />
             </Stack>
           </Container>
         </Box>
