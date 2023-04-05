@@ -1,26 +1,6 @@
-import Head from "next/head";
-import * as React from "react";
-import { Inter } from "next/font/google";
-import Album from "@components/Album";
-import clientPromise from "@lib/db";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export async function getServerSideProps(context) {
-  try {
-    await clientPromise;
-
-    console.log("connected to mongodb");
-    return {
-      props: { isConnected: true },
-    };
-  } catch (e) {
-    console.error(e);
-    return {
-      props: { isConnected: false },
-    };
-  }
-}
+import Head from 'next/head';
+import * as React from 'react';
+import Album from '@/components/Landing';
 
 const Home = () => {
   return (
